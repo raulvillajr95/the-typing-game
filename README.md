@@ -1,1 +1,3 @@
 # the-typing-game
+
+## Rules
