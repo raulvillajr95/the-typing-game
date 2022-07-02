@@ -10,6 +10,8 @@ function randomNum(b) {
 let currentWord = `${words[randomNum(words.length - 1)]}`;
 let currentWordSplit = currentWord.split('')
 
+let correct = 0;
+
 // mainWord.textContent = currentWord;
 
 // Just turning each letter green
@@ -23,9 +25,25 @@ for (let i = 0; i < currentWord.length; i++) {
 
 let typedWords = []
 
-function timerStart() {
-  
-}
+const timer = document.querySelector('.timer')
+let secsRemaining = 30;
+
+// Timer 
+let interval = setInterval(() => {
+  secsRemaining -= 1;
+  if (secsRemaining >= 10) {
+    // console.log(`0:${secsRemaining}`)
+    timer.textContent = `0:${secsRemaining}`;
+  } else if (secsRemaining < 10) {
+    // console.log(`0:0${secsRemaining}`)
+    timer.textContent = `0:0${secsRemaining}`;
+  }
+  if (secsRemaining == 0) {
+    clearInterval(interval);
+  }
+}, 1000)
+
+const numberCorrect = document.querySelector('.number-correct');
 
 window.addEventListener('keydown',() => {
   let letter = window.event.key
@@ -41,17 +59,56 @@ window.addEventListener('keydown',() => {
       mainWord.children[comparingPositionStyling].style.color = 'green';
     } else if (typedWords[comparingPosition] !== currentWord[comparingPosition]) {
       mainWord.children[comparingPositionStyling].style.color = 'red';
+      secsRemaining -= 3;
+    }
+    if (typedWords.join('') == currentWord) {
+      console.log(mainWord.children)
+      for (let i = 0; i < mainWord.children.length; i++) {
+        //mainWord.children[i].style.color = "yellow";
+        mainWord.remove(mainWord.children[i])
+      }
+      console.log(mainWord)
+
+      // Resets
+      correct += 1;
+      numberCorrect.textContent = `${correct}`;
+
+      let currentWordAfter1 = `${words[randomNum(words.length - 1)]}`;
+      let currentWordA1Split = currentWord.split('');
+      
+      // display new word on screen
+      for (let i = 0; i < currentWordAfter1.length; i++) {
+        let span = document.createElement('span')
+        span.textContent = `${currentWordA1Split[i]}`;
+        span.style.color = 'lightgrey';
+        mainWord.appendChild(span)
+        console.log(span)
+      }
+      console.log('new word??', currentWordAfter1)
     }
 
-    console.log(typedWords)
+    console.log(typedWords.join('') , currentWord)
   }
 })
 
 /*
--start timer when first keydown
+-if full word correct turn yellow
+  (just for testing purposes)
+  possibly don't stop, just keep going
+  add to 'correct' when full word is good
+-start 30 second timer when first keydown
+  then a 30 second countdown
 -minus 3 seconds when letter wrong
+  don't move forward
+  don't turn red
+  only remove 3 seconds
+-all words turn red when time runs out
+-add point '# correct' everytime I get word right
+Later:
+-when press start, make first word appear
 
 functionality:
+*possibly don't stop when wrong, just keep going
 -you get your one word in the middle of the screen
 -user needs to type out word letter by letter
 -if letter is correct,
@@ -59,4 +116,7 @@ functionality:
 -if letter is wrong,
     3 seconds tooken away from time
 -in 30 seconds, enter as many correct words as possible
+
+ideas:
+-possibly create functions for all pieces of code
 */
