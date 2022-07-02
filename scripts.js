@@ -61,30 +61,34 @@ window.addEventListener('keydown',() => {
       mainWord.children[comparingPositionStyling].style.color = 'red';
       secsRemaining -= 3;
     }
+    
+    // If word is correct
     if (typedWords.join('') == currentWord) {
-      console.log(mainWord.children)
-      for (let i = 0; i < mainWord.children.length; i++) {
-        //mainWord.children[i].style.color = "yellow";
-        mainWord.remove(mainWord.children[i])
-      }
-      console.log(mainWord)
-
-      // Resets
       correct += 1;
       numberCorrect.textContent = `${correct}`;
-
-      let currentWordAfter1 = `${words[randomNum(words.length - 1)]}`;
-      let currentWordA1Split = currentWord.split('');
-      
-      // display new word on screen
-      for (let i = 0; i < currentWordAfter1.length; i++) {
-        let span = document.createElement('span')
-        span.textContent = `${currentWordA1Split[i]}`;
-        span.style.color = 'lightgrey';
-        mainWord.appendChild(span)
-        console.log(span)
+    }
+    // If finished word
+    if (typedWords.length == currentWord.length) {
+      console.log(mainWord.children.length)
+      for (let i = 0; i < mainWord.children.length; i++) {
+        //mainWord.children[i].style.color = "yellow";
+        // mainWord.children[mainWord.children.length-1].remove()
+        console.log(mainWord.children.length-1)
       }
-      console.log('new word??', currentWordAfter1)
+      // console.log("Removed??", mainWord)
+
+      // // Resets
+      // let currentWordAfter1 = `${words[randomNum(words.length - 1)]}`;
+      // let currentWordA1Split = currentWord.split('');
+      
+      // // display new word on screen
+      // for (let i = 0; i < currentWordAfter1.length; i++) {
+      //   let span = document.createElement('span')
+      //   span.textContent = `${currentWordA1Split[i]}`;
+      //   span.style.color = 'lightgrey';
+      //   mainWord.appendChild(span)
+      //   console.log(span)
+      // }
     }
 
     console.log(typedWords.join('') , currentWord)
@@ -92,12 +96,11 @@ window.addEventListener('keydown',() => {
 })
 
 /*
--if full word correct turn yellow
-  (just for testing purposes)
-  possibly don't stop, just keep going
-  add to 'correct' when full word is good
--start 30 second timer when first keydown
-  then a 30 second countdown
+-new word when finished 
+  completely remove all children span
+  have new word
+  add new word in spans
+    make it visible, styling of lightgrey
 -minus 3 seconds when letter wrong
   don't move forward
   don't turn red
