@@ -1,6 +1,7 @@
 const mainWord = document.querySelector('.main-word');
 
-const words = ['October', 'Week', 'Boom', 'Dead', 'Precede', 'Limit', 'Plagiarize', 'Despair', 'Persist', 'Loud', 'Solo', 'Excavation','Force','Threaten','Part','Goal','Nest','Tongue','Accompany','Oral','Horoscope','Cancer','Contemporary','Mathematics','Scheme','Skin','Ethics','Cave','Clock','Lead'];
+
+const words = ['october', 'foot', 'virus', 'overcharge', 'memory', 'government', 'cycle', 'surgeon', 'dead', 'technique', 'late', 'multimedia', 'path', 'stomach', 'federation', 'speaker', 'trait', 'in', 'act', 'trouble', 'fling', 'trainer', 'honor', 'convert', 'deal', 'chocolate', 'retreat', 'ideology', 'exercise', 'tasty', 'mourning', 'twitch', 'pass', 'banana', 'trivial', 'launch', 'hunter', 'calculation', 'racism', 'still', 'rhetoric', 'body', 'illusion', 'quest', 'analyst', 'research', 'panic', 'powder', 'privacy', 'flock', 'machinery'];
 
 // Preset functions
 function randomNum(b) {
@@ -26,6 +27,8 @@ for (let i = 0; i < currentWord.length; i++) {
 let typedWords = []
 
 const timer = document.querySelector('.timer')
+const timerSection = document.querySelector('.timer-section')
+const correctSection = document.querySelector('.correct-section')
 let secsRemaining = 30;
 
 // Timer 
@@ -38,8 +41,13 @@ let interval = setInterval(() => {
     // console.log(`0:0${secsRemaining}`)
     timer.textContent = `0:0${secsRemaining}`;
   }
-  if (secsRemaining == 0) {
+  if (secsRemaining <= 0) {
     clearInterval(interval);
+    mainWord.style.display = 'none';
+    timerSection.style.display = 'none';
+    correctSection.style.fontSize = '4rem';
+    secsRemaining = 30;
+    timer.textContent = `0:${secsRemaining}`
   }
 }, 1000)
 
@@ -103,8 +111,8 @@ window.addEventListener('keydown',() => {
 })
 
 /*
--new word when finished
-  make new word clickable
+-add restart button
+  when pressed, just reload page
 -minus 3 seconds when letter wrong
   don't move forward
   don't turn red
