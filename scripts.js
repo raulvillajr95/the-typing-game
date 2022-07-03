@@ -70,25 +70,32 @@ window.addEventListener('keydown',() => {
     // If finished word
     if (typedWords.length == currentWord.length) {
       console.log(mainWord.children.length)
-      for (let i = 0; i < mainWord.children.length; i++) {
+      let mainWordLen = mainWord.children.length
+      for (let i = 0; i < mainWordLen; i++) {
         //mainWord.children[i].style.color = "yellow";
         // mainWord.children[mainWord.children.length-1].remove()
-        console.log(mainWord.children.length-1)
+        console.log(mainWord.children[mainWord.children.length-1].remove())
       }
-      // console.log("Removed??", mainWord)
+      console.log("Removed??", mainWord)
 
       // // Resets
-      // let currentWordAfter1 = `${words[randomNum(words.length - 1)]}`;
-      // let currentWordA1Split = currentWord.split('');
+      let currentWordAfter1 = `${words[randomNum(words.length - 1)]}`;
+      let currentWordA1Split = currentWordAfter1.split('');
+      currentWord = currentWordAfter1;
+      currentWordSplit = currentWordA1Split;
+      typedWords = [];
+
+      console.log('currentWordAfter1',currentWordAfter1, currentWord)
+      console.log('currentWordA1Split',currentWordA1Split, currentWordSplit)
       
-      // // display new word on screen
-      // for (let i = 0; i < currentWordAfter1.length; i++) {
-      //   let span = document.createElement('span')
-      //   span.textContent = `${currentWordA1Split[i]}`;
-      //   span.style.color = 'lightgrey';
-      //   mainWord.appendChild(span)
-      //   console.log(span)
-      // }
+      // display new word on screen
+      for (let i = 0; i < currentWordAfter1.length; i++) {
+        let span = document.createElement('span')
+        span.textContent = `${currentWordA1Split[i]}`;
+        span.style.color = 'lightgrey';
+        mainWord.appendChild(span)
+        console.log(span)
+      }
     }
 
     console.log(typedWords.join('') , currentWord)
@@ -96,11 +103,8 @@ window.addEventListener('keydown',() => {
 })
 
 /*
--new word when finished 
-  completely remove all children span
-  have new word
-  add new word in spans
-    make it visible, styling of lightgrey
+-new word when finished
+  make new word clickable
 -minus 3 seconds when letter wrong
   don't move forward
   don't turn red
