@@ -84,17 +84,16 @@ body {
 .info-section button {
 	height: 2rem;
 	width: 6rem;
-	margin-top: 1rem;
 	border-radius: 2rem;
 	border-style: none;
 }
 .input-text {
-	margin-top: 1rem;
 	border-style: none;
 	text-align: center;
 	height: 2rem;
 	width: 6rem;
 	border-radius: 0.25rem;
+	margin-bottom: 0.25rem;
 }
 .input-text:focus {
 	border: none;
