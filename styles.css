@@ -46,18 +46,19 @@ table {
 /* My CSS */
 body {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 	flex-direction: column;
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #141414;
+	padding-top: 5rem;
 }
 .main-word {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 900;
   color: #f3f3f3;
-	margin-bottom: 5rem;
+	margin-bottom: 0.25rem;
 }
 .info-section {
 	display: flex;
@@ -69,14 +70,33 @@ body {
 }
 .info-section .correct-section {
 	font-weight: 900;
-	font-size: 2rem;
+	font-size: 1.2rem;
 	color: darkgray;
 }
 .info-section .timer-section {
-	font-size: 1.3rem;
+	font-size: 0.8rem;
 	color: #f3f3f3;
 }
 .timer {
 	color: darkgray;
 	font-weight: 900;
+}
+.info-section button {
+	height: 2rem;
+	width: 6rem;
+	margin-top: 1rem;
+	border-radius: 2rem;
+	border-style: none;
+}
+.input-text {
+	margin-top: 1rem;
+	border-style: none;
+	text-align: center;
+	height: 2rem;
+	width: 6rem;
+	border-radius: 0.25rem;
+}
+.input-text:focus {
+	border: none;
+	outline: none;
 }
