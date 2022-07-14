@@ -105,3 +105,8 @@ body {
 	border: none;
 	outline: none;
 }
+.doodledee-img {
+	width: 3rem;
+	margin-top: 3rem;
+	border-radius: 50%;
+}
