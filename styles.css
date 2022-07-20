@@ -97,9 +97,10 @@ body {
 	border-style: none;
 	text-align: center;
 	height: 2rem;
-	width: 6rem;
+	width: 4rem;
 	border-radius: 0.25rem;
 	margin-bottom: 0.25rem;
+	font-size: 0.75rem;
 }
 .input-text:focus {
 	border: none;
