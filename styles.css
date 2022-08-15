@@ -153,3 +153,22 @@ body {
 		margin-top: 1.5rem;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #141414;
+		background-image: url('images/bullseye-gradient.svg');
+	}
+	.main-word {
+		color: #f3f3f3;
+	}
+	.info-section .correct-section {
+		color: darkgray;
+	}
+	.info-section .timer-section {
+		color: #f3f3f3;
+	}
+	.timer {
+		color: darkgray;
+	}
+}
