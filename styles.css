@@ -1,3 +1,8 @@
+:root {
+	--almost-black: #141414;
+	--almost-white: #f3f3f3;
+}
+
 /* My CSS */
 body {
   display: flex;
@@ -7,7 +12,7 @@ body {
   height: 100vh;
 	overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #141414;
+  background-color: var(--almost-black);
 	background: url('images/light-bullseye-gradient.svg');
 	padding-top: 0rem;
 	background-position: center;
@@ -24,7 +29,7 @@ body {
 .main-word {
   font-size: 3.5rem;
   font-weight: 900;
-  color: #141414;
+  color: var(--almost-black);
 	margin-bottom: 0.25rem;
 }
 .input-text {
@@ -52,14 +57,14 @@ body {
 .info-section .correct-section {
 	font-weight: 900;
 	font-size: 2rem;
-	color: #141414;
+	color: var(--almost-black);
 }
 .info-section .timer-section {
 	font-size: 1rem;
-	color: #141414;
+	color: var(--almost-black);
 }
 .timer {
-	color: #141414;
+	color: var(--almost-black);
 	font-weight: 900;
 }
 .info-section button {
@@ -68,7 +73,7 @@ body {
 	border-radius: 2rem;
 	border-style: none;
 	background-color: #a4a4a4;
-	color: #f3f3f3;
+	color: var(--almost-white);
 }
 .doodledee-img {
 	width: 3rem;
@@ -82,22 +87,14 @@ body {
 		width: 20rem;
 		height: 15.385rem;
 	}
-	.main-word {
-		font-size: 4rem;
-	}
-	.input-text {
-		margin-top: 4rem;
-	}
-	.info-section {
-		height: 12rem;
-	}
+	.main-word {font-size: 4rem}
+	.input-text {margin-top: 4rem}
+	.info-section {height: 12rem}
 	.info-section button {
 		height: 3rem;
 		width: 8rem;
 	}
-	.doodledee-img {
-		margin-top: 15rem;
-	}
+	.doodledee-img {margin-top: 15rem}
 }
 
 /* Mobile CSS */
@@ -106,21 +103,11 @@ body {
 		width: 12rem;
 		height: 9.231rem;
 	}
-	.main-word {
-		font-size: 3rem;
-	}
-	.input-text {
-		width: 4rem;
-	}
-	.info-section {
-		height: 6rem;
-	}
-	.info-section .correct-section {
-		font-size: 1.2rem;
-	}
-	.info-section .timer-section {
-		font-size: 0.8rem;
-	}
+	.main-word {font-size: 3rem}
+	.input-text {width: 4rem}
+	.info-section {height: 6rem}
+	.info-section .correct-section {font-size: 1.2rem}
+	.info-section .timer-section {font-size: 0.8rem}
 	.doodledee-img {
 		width: 3rem;
 		margin-top: 8rem;
@@ -135,53 +122,33 @@ body {
 		width: 8rem;
 		height: 6.154rem;
 	}
-	.main-word {
-		font-size: 1.8rem;
-	}
-	.input-text {
-		margin-top: 1.75rem;
-	}
+	.main-word {font-size: 1.8rem}
+	.input-text {margin-top: 1.75rem}
 	.info-section {
 		height: 6rem;
 		margin-top: 1rem;
 	}
-	.info-section .correct-section {
-		font-size: 1.75rem;
-	}
-	.info-section .timer-section {
-		font-size: 1rem;
-	}
+	.info-section .correct-section {font-size: 1.75rem}
+	.info-section .timer-section {font-size: 1rem}
 	.info-section button {
 		height: 1.75rem;
 		width: 5rem;
 	}
-	.doodledee-img {
-		margin-top: 1.5rem;
-	}
+	.doodledee-img {margin-top: 1.5rem}
 }
 
 @media (prefers-color-scheme: dark) {
 	body {
-		background-color: #141414;
+		background-color: var(--almost-black);
 		background-image: url('images/bullseye-gradient.svg');
 	}
-	.logo-img {
-		background-image: url(images/logo.svg);
-	}
-	.main-word {
-		color: #f3f3f3;
-	}
-	.info-section .correct-section {
-		color: darkgray;
-	}
-	.info-section .timer-section {
-		color: #f3f3f3;
-	}
-	.timer {
-		color: darkgray;
-	}
+	.logo-img {background-image: url(images/logo.svg)}
+	.main-word {color: var(--almost-white)}
+	.info-section .correct-section {color: darkgray}
+	.info-section .timer-section {color: var(--almost-white)}
+	.timer {color: darkgray}
 	.info-section button {
 		background-color: #656565;
-		color: #f3f3f3;
+		color: var(--almost-white);
 	}
 }

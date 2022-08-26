@@ -1,10 +1,8 @@
 const mainWord = document.querySelector('.main-word');
 const inputText = document.querySelector('.input-text');
+const words = ['brimstone', 'grid', 'sleep', 'biter', 'decent', 'rights', 'discussion', 'foul', 'nomad', 'bedtime', 'hive', 'concussion', 'fight', 'blend', 'fiasco', 'abduction', 'heretic', 'bellybutton', 'warrior', 'bleeding', 'high', 'cry', 'bloodstream', 'hormonal', 'station', 'burden', 'surgical', 'comet', 'elevator', 'robber', 'column', 'propellant', 'phenomena', 'captive', 'plant', 'dent', 'absurdity', 'deathtrap', 'alliance', 'chill', 'colors', 'screamer', 'candle', 'fraud', 'reckless', 'entity', 'code', 'hellfire', 'racoon', 'eel', 'norm', 'plush', 'extremist', 'ghoulish', 'disgusting', 'auction', 'collarbone', 'kangaroo', 'flatness', 'historic', 'heelbone', 'apocalypse', 'became', 'generation', 'guard', 'loyal', 'snail', 'feature', 'flirtation', 'observer', 'countryside', 'hope', 'aquarium', 'contrast', 'belly', 'martini', 'messenger', 'blip', 'subsonic', 'nerve', 'shotgun', 'hat', 'sideshow', 'galactic', 'bludgeon', 'servant', 'dread', 'hungry', 'airship', 'eastern', 'bug', 'feel', 'teen', 'firearm', 'pill', 'mustache', 'duel', 'composite', 'fluid', 'blowgun', 'big', 'freakish', 'desire', 'official', 'allergenic', 'balcony', 'cyanide', 'lucky', 'bionic', 'glittery', 'hoodwink', 'grieving', 'haywire', 'heating', 'original', 'elongation', 'autonomous', 'flaw', 'waveform', 'guillotine', 'settler', 'starfish', 'miserable', 'bully', 'gift', 'bucket', 'juice', 'collider', 'skin', 'beak', 'aggressive', 'kind', 'mutant', 'connectedness', 'orangutang', 'dancer', 'dexterity', 'erotic', 'broken', 'hunk', 'afterworld', 'decadent', 'ransom', 'hairy', 'dropping', 'selfish', 'wolves', 'molecular', 'green', 'element', 'smart', 'fort', 'locus', 'astronaut', 'gun', 'gimmick', 'hose', 'meat', 'volume', 'prophesy', 'sound', 'glutton', 'blessing', 'switch', 'lurker', 'smile', 'hurdle', 'islamism', 'humble', 'daydream', 'groaner', 'excuse', 'domination', 'adoption', 'attic', 'glandular', 'hostility', 'humming', 'juvenile', 'blob', 'pillbox', 'corrosive', 'drifter', 'agonizing', 'absence', 'gasmask', 'bomber', 'arrival', 'hotly', 'ebony', 'coyotes', 'paradox', 'lavender', 'truth', 'monarchy', 'energy', 'moaning', 'bottle', 'egg', 'skull'];
 
-const words = ['brimstone', 'grid', 'sleep', 'biter', 'decent', 'rights', 'discussion', 'foul', 'nomad', 'bedtime', 'hive', 'concussion', 'fight', 'blend', 'fiasco', 'abduction', 'heretic', 'bellybutton', 'warrior', 'bleeding', 'high', 'cry', 'bloodstream', 'hormonal', 'station', 'burden', 'surgical', 'comet', 'elevator', 'robber', 'column', 'propellant', 'phenomena', 'captive', 'plant', 'dent', 'absurdity', 'deathtrap', 'alliance', 'chill', 'colors', 'screamer', 'candle', 'fraud', 'reckless', 'entity', 'code', 'hellfire', 'racoon', 'eel', 'norm', 'plush', 'extremist', 'ghoulish', 'disgusting', 'auction', 'collarbone', 'kangaroo', 'flatness', 'historic', 'heelbone', 'apocalypse', 'became', 'generation', 'guard', 'loyal', 'snail', 'feature', 'flirtation', 'observer', 'countryside', 'hope', 'aquarium', 'contrast', 'belly', 'martini', 'messenger', 'blip', 'subsonic', 'nerve', 'shotgun', 'hat', 'sideshow', 'galactic', 'bludgeon', 'servant', 'dread', 'hungry', 'airship', 'eastern', 'bug', 'feel', 'teen', 'firearm', 'pill', 'mustache', 'duel', 'composite', 'fluid', 'blowgun', 'big', 'freakish', 'desire', 'official', 'allergenic', 'balcony', 'cyanide', 'lucky', 'bionic', 'glittery', 'hoodwink', 'grieving', 'haywire', 'heating', 'original', 'elongation', 'autonomous', 'flaw', 'waveform', 'guillotine', 'settler', 'starfish', 'miserable', 'bully', 'gift', 'bucket', 'juice', 'collider', 'skin', 'beak', 'aggressive', 'kind', 'mutant', 'connectedness', 'orangutang', 'dancer', 'dexterity', 'erotic', 'broken', 'hunk', 'afterworld', 'decadent', 'ransom', 'hairy', 'dropping', 'selfish', 'wolves', 'molecular', 'green', 'element', 'smart', 'fort', 'locus', 'astronaut', 'gun', 'gimmick', 'hose', 'meat', 'volume', 'prophesy', 'sound', 'glutton', 'blessing', 'switch', 'lurker', 'smile', 'hurdle', 'islamism', 'humble', 'daydream', 'groaner', 'excuse', 'domination', 'adoption', 'attic', 'glandular', 'hostility', 'humming', 'juvenile', 'blob', 'pillbox', 'corrosive', 'drifter', 'agonizing', 'absence', 'gasmask', 'bomber', 'arrival', 'hotly', 'ebony', 'coyotes', 'paradox', 'lavender', 'truth', 'monarchy', 'energy', 'moaning', 'bottle', 'egg', 'skull']
-
-let saus = words[0].split(', ')
-console.log(saus)
+let saus = words[0].split(', ');
 
 // Preset functions
 function randomNum(b) {
@@ -18,7 +16,7 @@ let correct = 0;
 
 for (let i = 0; i < currentWord.length; i++) {
   let span = document.createElement('span');
-  span.textContent = `${currentWordSplit[i]}`
+  span.textContent = `${currentWordSplit[i]}`;
   mainWord.appendChild(span);
 };
 
@@ -92,10 +90,10 @@ window.addEventListener('keydown',() => {
       
       // display new word on screen
       for (let i = 0; i < currentWordAfter1.length; i++) {
-        let span = document.createElement('span')
+        let span = document.createElement('span');
         span.textContent = `${currentWordA1Split[i]}`;
         span.style.color = 'lightgrey';
-        mainWord.appendChild(span)
+        mainWord.appendChild(span);
       }
     }
   }
